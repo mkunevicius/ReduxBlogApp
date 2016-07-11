@@ -21,6 +21,7 @@ class PostsNew extends Component {
   }
 
   render() {
+    // reduxForm fields configuration object:
     const { fields: { title, categories, content }, handleSubmit } = this.props;
 
     return (
@@ -58,6 +59,7 @@ class PostsNew extends Component {
   }
 }
 
+// form validation function
 function validate(values) {
   const errors = {};
 
@@ -74,8 +76,9 @@ function validate(values) {
   return errors;
 }
 
-// connect(): 1st argument is mapStateToProps, 2nd is mapDispatchToPorops;
-// reduxForm(): 1st argument is form config, 2nd - mapStateToProps, 3rd - mapDispatchToPorops;
+// 'connect' from 'react-redux' is similar to reduxForm from 'redux-form':
+// connect's 1st argument is mapStateToProps, 2nd is mapDispatchToPorops;
+// reduxForm's 1st argument is form config, 2nd - mapStateToProps, 3rd - mapDispatchToPorops;
 export default reduxForm({
   form: 'PostNewForm',
   fields: ['title', 'categories', 'content'], validate

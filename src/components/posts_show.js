@@ -9,11 +9,11 @@ class PostShow extends Component {
     router: PropTypes.object
   };
 
-  // get post
+  // get post (getting post id from URL)
   componentWillMount() {
     this.props.fetchPost(this.props.params.id);
   }
-  // delete function
+  // delete post (getting post id from URL)
   onDeleteClick() {
     this.props.deletePost(this.props.params.id)
       .then(() => {
